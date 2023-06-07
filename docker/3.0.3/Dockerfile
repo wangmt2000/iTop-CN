@@ -15,7 +15,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update ;\
 RUN sed -i '/AllowOverride/s/None/All/g' /etc/apache2/apache2.conf
 RUN sed -i 's#ErrorLog.*#ErrorLog /proc/self/fd/2#g' /etc/apache2/apache2.conf /etc/apache2/sites-available/*.conf
 RUN sed -i 's#CustomLog.*#CustomLog /proc/self/fd/1 combined#g' /etc/apache2/sites-available/*.conf
-RUN rm -rf /var/lib/apt/lists/* /etc/apache2/conf-available/other-vhosts-access-log.conf
+RUN rm -rf /var/lib/apt/lists/* /etc/apache2/conf-available/other-vhosts-access-log.conf /var/www/html
 
 ADD --chown=www-data:www-data iTop-3.0.3-10998.zip /
 ADD --chmod=755 entrypoint.sh /
