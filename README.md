@@ -6,7 +6,7 @@ iTop 2.7.x 版本
 https://github.com/purplegrape/iTop-CN-2.7
 ```  
 
-iTop 3.0.x 版本  
+iTop 3.0.x 版本（推荐）  
 ```
 https://github.com/purplegrape/iTop-CN-3.0
 ```  
@@ -19,6 +19,8 @@ https://github.com/purplegrape/iTop-CN-3.0
 ```
 http://pan.baidu.com/s/1jIOA5L0
 ```
+
+---
 
 如果您认可 iTop 对于您的企业和团队的重要作用，同时支持我的辛苦努力，请不吝打赏。  
 
