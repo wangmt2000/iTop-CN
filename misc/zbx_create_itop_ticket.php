@@ -29,6 +29,7 @@ if (($service_status != "OK") && ($service_status != "UP") && ($service_state_ty
 					'org_id' => sprintf('SELECT Organization AS O JOIN FunctionalCI AS CI ON CI.org_id = O.id WHERE CI.name="%1$s"', $host),
 					'title' => sprintf($TITLE, $host, $service),
 					'description' => sprintf($DESCRIPTION, $host, $service),
+					'origin' => 'monitoring',
 					'functionalcis_list' => array(
 						array('functionalci_id' => sprintf("SELECT FunctionalCI WHERE name='%s'", $host), 'impact_code' => 'manual'),	
 					),
