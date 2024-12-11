@@ -6,6 +6,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update ;\
 
 RUN wget --no-check-certificate https://sourceforge.net/projects/itop/files/itop/3.1.2/iTop-3.1.2-14913.zip/download -O /opt/iTop-3.1.zip
 
+RUN echo "ServerTokens Prod\nServerSignature off" >> /etc/apache2/apache2.conf
 RUN sed -i '/AllowOverride/s/None/All/g' /etc/apache2/apache2.conf
 RUN sed -i 's#ErrorLog.*#ErrorLog /proc/self/fd/2#g' /etc/apache2/apache2.conf /etc/apache2/sites-available/*.conf
 RUN sed -i 's#CustomLog.*#CustomLog /proc/self/fd/1 combined#g' /etc/apache2/sites-available/*.conf

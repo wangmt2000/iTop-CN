@@ -12,6 +12,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update ;\
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y apache2 libapache2-mod-php7.4 php7.4-opcache php7.4-curl php7.4-gd php7.4-mbstring php7.4-mysql php7.4-ldap php7.4-xml php7.4-soap php7.4-zip graphviz mariadb-client tzdata unzip ;\
     DEBIAN_FRONTEND=noninteractive apt-get autoclean
 
+RUN echo "ServerTokens Prod\nServerSignature off" >> /etc/apache2/apache2.conf
 RUN sed -i '/AllowOverride/s/None/All/g' /etc/apache2/apache2.conf
 RUN sed -i 's#ErrorLog.*#ErrorLog /proc/self/fd/2#g' /etc/apache2/apache2.conf /etc/apache2/sites-available/*.conf
 RUN sed -i 's#CustomLog.*#CustomLog /proc/self/fd/1 combined#g' /etc/apache2/sites-available/*.conf
