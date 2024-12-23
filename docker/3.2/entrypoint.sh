@@ -5,6 +5,8 @@ set -e -x
 if [ ! -d /data/itop ];then
 	unzip -qn -d /data /opt/iTop-3.2.zip "web/*"
 	mv /data/web /data/itop
+	find /data/itop -type f -exec chmod 644 {} \;
+	find /data/itop -type d -exec chmod 755 {} \;
 	mkdir -p /data/itop/{conf,data,log,env-production,env-production-build,env-test,env-test-build}
 	chown -R www-data.www-data /data/itop/{conf,data,log,env-production,env-production-build,env-test,env-test-build}
 	ln -sf /data/itop /var/www/html/itop
