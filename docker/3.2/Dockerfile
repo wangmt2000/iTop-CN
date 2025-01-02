@@ -16,7 +16,7 @@ RUN rm -rf /var/lib/apt/lists/* /etc/apache2/conf-available/other-vhosts-access-
 RUN dpkg-reconfigure -f noninteractive dash
 
 VOLUME [ "/data" ]
-ADD docker/3.2/entrypoint.sh --chmod=755 entrypoint.sh /
+COPY docker/3.2/entrypoint.sh --chmod=755 entrypoint.sh /
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 EXPOSE 80
